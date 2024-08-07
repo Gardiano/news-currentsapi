@@ -85,10 +85,12 @@ export const Grid = (props: GridProps) => {
               image={data.image}
               description={data.description}
               published={data.published}
-              cardTitleStyles="line-clamp-6"
-              imageSize="w-full h-auto sm:h-[146px] sm:rounded-sm"
+              cardTitleStyles="w-full sm:w-[90%] line-clamp-6"
+              imageSize="w-full h-full sm:h-[120px] sm:rounded-sm"
+              cardDescriptionStyles="leading-tight sm:w-3/4"
               cardHeaderStyles='w-full h-auto p-3 text-md sm:text-lg lg:text-xl'
-              className='p-2 w-full h-full flex-col rounded-none pb-0 flex justify-start sm:p-0 sm:flex-row-reverse'
+              className='p-2 w-full h-full flex-col flex justify-start items-center 
+              pb-0 rounded-none sm:p-4 sm:flex-row-reverse'
             />
           ))}
         </div>

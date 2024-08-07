@@ -20,10 +20,10 @@ export const Paginations = (props: PaginationProps) => {
       <PaginationContent>
         <PaginationItem>
           <Button
-            className="w-fit h-fit flex bg-transparent hover:bg-transparent shadow-none text-slate-400"
+            className="w-fit h-fit flex bg-transparent 
+            hover:bg-transparent shadow-none text-slate-400"
             onClick={props.previousPage}
-            disabled={props.currentPage === 1}
-          >
+            disabled={props.currentPage === 1}>
             <ChevronLeft />
           </Button>
         </PaginationItem>
@@ -31,14 +31,14 @@ export const Paginations = (props: PaginationProps) => {
           <PaginationLink href="#">{props.currentPage}</PaginationLink>
         </PaginationItem>
         <PaginationItem>
-        Page {props.currentPage} of {props.totalPages}
+          Page {props.currentPage} of {props.totalPages}
         </PaginationItem>
         <PaginationItem>
           <Button
-            className="w-fit h-fit flex bg-transparent hover:bg-transparent shadow-none text-slate-400"
+            className="w-fit h-fit flex bg-transparent 
+            hover:bg-transparent shadow-none text-slate-400"
             onClick={props.nextPage}
-            disabled={props.currentPage === props.totalPages}
-          >
+            disabled={props.currentPage === props.totalPages}>
             <ChevronRight />
           </Button>
         </PaginationItem>

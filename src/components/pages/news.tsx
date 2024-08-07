@@ -18,7 +18,7 @@ export const NewsPage = () => {
     fetchNewsForPagination(page);
   }, [params.id, page]);
 
-    const fetchNews = async (page: number) => {
+  const fetchNews = async (page: number) => {
     const category = params.id!;
     const itemsPerPage = 9;
     try {
@@ -31,11 +31,13 @@ export const NewsPage = () => {
 
   const fetchNewsForPagination = async (page: number) => {
     const category = params.id!;
-    const itemsPerPage = 4;
+    const itemsPerPage = 20;
     try {
       const response = await getNews(category, page, itemsPerPage);
-      setPaginationNews(response.data.news);
-      setTotalPages(Math.ceil(totalNews / itemsPerPage));
+      if (page > 0) {
+        setPaginationNews(response.data.news.slice(9));
+        setTotalPages(Math.ceil(totalNews / itemsPerPage));
+      }
     } catch (e) {
       console.error('Error fetching news', e);
     }

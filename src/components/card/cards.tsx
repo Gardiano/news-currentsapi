@@ -18,7 +18,7 @@ export const Cards = (props: CardsProps) => {
       <NavigationLink url={props.url} target="_blank">
         {props.image && <img className={`${props.imageSize} bg-no-repeat`} src={props.image} style={backgroundProps} />}
       </NavigationLink>
-      <CardHeader className={`h-full flex justify-start rounded-lg p-0
+      <CardHeader className={`gap-2 h-full flex justify-start rounded-lg p-0 sm:gap-1
         ${props.cardHeaderStyles}`}>
         <Category categories={props.category} />
         <Author author={props.author} />
