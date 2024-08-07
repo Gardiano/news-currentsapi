@@ -74,12 +74,12 @@ export const Grid = (props: GridProps) => {
           ))}
         </div>
 
-        <div className='px-4 w-full max-w-[800px] h-full mx-auto gap-4 grid grid-cols-1 col-span-full
-       '>
-          {props.data.map(data => (
+        <div className='px-4 w-full h-full mx-auto gap-4 
+        grid grid-cols-1 col-span-full'>
+          {props.paginationData?.map(data => (
             <Cards
-              url={data.url}
               key={data.id}
+              url={data.url}
               category={data.category}
               title={data.title}
               image={data.image}
@@ -91,7 +91,6 @@ export const Grid = (props: GridProps) => {
               className='p-2 w-full h-full flex-col rounded-none pb-0 flex justify-start sm:p-0 sm:flex-row-reverse'
             />
           ))}
-          
         </div>
       </section>
     </main>

@@ -1,6 +1,6 @@
-
 export interface News {
     totalNews:number
+    totalPages: number
     data: []
     news: []
     author: string
@@ -12,8 +12,8 @@ export interface News {
     published: string
     title: string
     url: string
+    page?: number
 }
-
 export interface NewsProps<T> {
   data: T
 }

@@ -1,42 +1,45 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
 import { Button } from "../ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface PaginationProps { 
+interface PaginationProps {
   nextPage: () => void;
   previousPage: () => void;
-  pages: number;
+  currentPage: number
+  totalPages: number
 }
 
-export const Paginations = ({ nextPage, previousPage, pages }: PaginationProps) => {
+export const Paginations = (props: PaginationProps) => {
   return (
-    <Pagination>
+    <Pagination className="mb-4">
       <PaginationContent>
         <PaginationItem>
           <Button
             className="w-fit h-fit flex bg-transparent hover:bg-transparent shadow-none text-slate-400"
-            onClick={previousPage}
+            onClick={props.previousPage}
+            disabled={props.currentPage === 1}
           >
-            prev
+            <ChevronLeft />
           </Button>
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink href="#">{pages}</PaginationLink>
+          <PaginationLink href="#">{props.currentPage}</PaginationLink>
         </PaginationItem>
         <PaginationItem>
-          <PaginationEllipsis />
+        Page {props.currentPage} of {props.totalPages}
         </PaginationItem>
         <PaginationItem>
           <Button
             className="w-fit h-fit flex bg-transparent hover:bg-transparent shadow-none text-slate-400"
-            onClick={nextPage}
+            onClick={props.nextPage}
+            disabled={props.currentPage === props.totalPages}
           >
-            next
+            <ChevronRight />
           </Button>
         </PaginationItem>
       </PaginationContent>
