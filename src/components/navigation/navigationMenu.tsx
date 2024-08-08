@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Carousel, CarouselContent } from "../ui/carousel"
 import { NavigationLink } from "./navigationLink"
-import { Badge } from "../ui/badge";
 
 export const NavigationMenu = () => {
   const navigate = useNavigate();
