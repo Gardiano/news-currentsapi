@@ -11,7 +11,6 @@ export const Cards = (props: CardsProps) => {
     backgroundSize: `100% 100%`,
   };
 
-
   return (
     <Card className={`p-0 flex border-0 items-start justify-end
         ${props.className}`}>
