@@ -1,26 +1,25 @@
-import { getNews } from "@/services/api";
 import { Grid } from "../grid/grid"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { News } from "../models/news";
+import { useNews } from "../hooks/useNews";
+import { usePagination } from "../hooks/usePagination";
+import { Paginations } from "../pagination/pagination";
 
 export const Home = () => {
-  const [news, setNews] = useState<News[]>([]);
+  const { news, fetchNews } = useNews();
+  const { paginationNews, totalPages, page, fetchNewsForPagination,
+    handlePrevPage, handleNextPage } = usePagination();
   const params = useParams();
+
   useEffect(() => {
-    getData();
-  }, [params.id!]);
+    fetchNews(1, params.id!);
+    fetchNewsForPagination(page, params.id!);
+  }, [page]);
 
-  const getData = async () => {
-    const category = 'latest';
-    const total_items = 27;
-    try {
-      const response = await getNews(category, 1, total_items);
-      setNews(response.data.news);
-    } catch (e) {
-      throw new Error;
-    }
-  }
-
-  return <Grid data={news} theme={'Latest News'}  />
+  return (
+    <>
+      <Grid data={news} theme={'latest-news'} paginationData={paginationNews} />
+      <Paginations nextPage={handleNextPage} previousPage={handlePrevPage} currentPage={page} totalPages={totalPages} />
+    </>
+  )
 }
