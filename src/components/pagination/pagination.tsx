@@ -2,11 +2,9 @@ import {
   Pagination,
   PaginationContent,
   PaginationItem,
-  PaginationLink,
 } from "@/components/ui/pagination";
 import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
 interface PaginationProps {
   nextPage: () => void;
   previousPage: () => void;
@@ -15,30 +13,36 @@ interface PaginationProps {
 }
 
 export const Paginations = (props: PaginationProps) => {
+
   return (
     <Pagination className="mb-4">
       <PaginationContent>
         <PaginationItem>
           <Button
             className="w-fit h-fit flex bg-transparent 
-            hover:bg-transparent shadow-none text-slate-400"
+            hover:bg-transparent shadow-none text-sky-900"
             onClick={props.previousPage}
-            disabled={props.currentPage === 1}>
+            disabled={props?.currentPage === 1}>
             <ChevronLeft />
           </Button>
         </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">{props.currentPage}</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          Page {props.currentPage} of {props.totalPages}
+        <PaginationItem className="w-fit h-fit flex flex-row justify-center items-center">
+          <Button className="w-fit h-fit flex bg-transparent 
+            hover:bg-transparent shadow-none text-slate-900">
+            {props?.currentPage}
+          </Button>
+          /
+          <Button className="w-fit h-fit flex bg-transparent 
+            hover:bg-transparent shadow-none text-slate-900">
+            {props.totalPages}
+          </Button>
         </PaginationItem>
         <PaginationItem>
           <Button
             className="w-fit h-fit flex bg-transparent 
-            hover:bg-transparent shadow-none text-slate-400"
+              hover:bg-transparent shadow-none text-sky-900"
             onClick={props.nextPage}
-            disabled={props.currentPage === props.totalPages}>
+            disabled={props?.currentPage === props.totalPages}>
             <ChevronRight />
           </Button>
         </PaginationItem>
