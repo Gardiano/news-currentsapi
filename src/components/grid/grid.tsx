@@ -2,7 +2,6 @@ import { Cards } from "../card/cards"
 import { News } from "../models/news"
 import { NavigationMenu } from "../navigation/navigationMenu"
 import { Theme } from "../theme/theme"
-
 interface GridProps {
   data: News[];
   paginationData?: News[]
@@ -80,15 +79,14 @@ export const Grid = (props: GridProps) => {
             <Cards
               key={data.id}
               url={data.url}
-              category={data.category}
               title={data.title}
               image={data.image}
               description={data.description}
               published={data.published}
               cardTitleStyles="w-full sm:w-[90%] line-clamp-6"
               imageSize="w-full h-full sm:h-[120px] sm:rounded-sm"
-              cardDescriptionStyles="leading-tight sm:w-3/4"
-              cardHeaderStyles='w-full h-auto p-3 text-md sm:text-lg lg:text-xl'
+              cardDescriptionStyles="leading-tight text-sm sm:w-3/4"
+              cardHeaderStyles='w-full h-auto p-3 sm:text-lg lg:text-xl'
               className='p-2 w-full h-full flex-col flex justify-start items-center 
               pb-0 rounded-none sm:p-4 sm:flex-row-reverse'
             />
