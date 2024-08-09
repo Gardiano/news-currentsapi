@@ -6,7 +6,7 @@ export const usePagination = () => {
   const [paginationNews, setPaginationNews] = useState<News[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
-  const [totalNews] = useState<number>(100);
+  const [totalNews] = useState<number>(200);
 
   const handlePrevPage = () => {
     if (page > 1)
@@ -14,7 +14,6 @@ export const usePagination = () => {
   };
 
   const handleNextPage = () => {
-    // melhorar exp do usuario na paginação;
     let windowHeight = (window.innerHeight / 1.2);
     if (page < totalPages) {
       setPage(page + 1);

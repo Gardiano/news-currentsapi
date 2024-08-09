@@ -11,4 +11,5 @@ export interface CardsProps {
   cardHeaderStyles?: string
   cardTitleStyles?: string
   cardDescriptionStyles?: string
+  type?: string
 }

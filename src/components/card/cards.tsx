@@ -4,6 +4,7 @@ import { NavigationLink } from "../navigation/navigationLink";
 import { Category } from "../category/category";
 import { Published } from "../published/published";
 import { Author } from "../author/author";
+import { ClassifyNews } from "../classify/classifyNews";
 
 export const Cards = (props: CardsProps) => {
   const backgroundProps = {
@@ -21,12 +22,13 @@ export const Cards = (props: CardsProps) => {
         ${props.cardHeaderStyles}`}>
         <Category categories={props.category} />
         <Author author={props.author} />
-          <CardTitle
-            className={` text-slate-900 text-ellipsis pt-1 rounded-md sm:line-clamp-3 ${props.cardTitleStyles}`}>
-            <NavigationLink className="font-times hover:text-sky-900 font-thin" url={props.url} target="_blank">
-              {props.title}
-            </NavigationLink>
-          </CardTitle>
+        <ClassifyNews type={props.published!} />
+        <CardTitle
+          className={` text-slate-900 text-ellipsis pt-1 rounded-md sm:line-clamp-3 ${props.cardTitleStyles}`}>
+          <NavigationLink className="font-times hover:text-sky-900 font-thin" url={props.url} target="_blank">
+            {props.title}
+          </NavigationLink>
+        </CardTitle>
         <CardDescription
           className={` font-prata text-start text-base text-slate-600 leading-none
               ${props.cardDescriptionStyles} sm:line-clamp-4`}>

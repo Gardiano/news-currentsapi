@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import 'dayjs/locale/pt-br'
-dayjs.locale('pt-br');
+import 'dayjs/locale/en-gb'
+dayjs.locale('en-gb');
 
 export const Date = (date: string) => {
-  return dayjs(date).format('DD/MM/YYYY');
+  return dayjs(date).format('DD/MM/YY');
 }
