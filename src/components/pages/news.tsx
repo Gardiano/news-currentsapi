@@ -19,8 +19,7 @@ export const NewsPage = () => {
   return (
     <>
       <Grid data={news} theme={params.id!} paginationData={paginationNews} />
-      <Paginations nextPage={handleNextPage} previousPage={handlePrevPage} currentPage={page} totalPages={totalPages}
-      />
+      <Paginations nextPage={handleNextPage} previousPage={handlePrevPage} currentPage={page} totalPages={totalPages} />
     </>
   );
 };
