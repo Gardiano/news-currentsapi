@@ -6,21 +6,19 @@ export const usePagination = () => {
   const [paginationNews, setPaginationNews] = useState<News[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
-  const [totalNews] = useState<number>(200);
+  const [totalNews] = useState<number>(100);
 
   const handlePrevPage = () => {
     if (page > 1)
-    setPage(page - 1);
+      setPage(page - 1);
   };
 
   const handleNextPage = () => {
-    let windowHeight = (window.innerHeight / 1.2);
+    const paginatedItems = document.getElementById('paginated-items')?.offsetTop;
+    const scrollingToTop = window.scrollTo({ top: paginatedItems, behavior: "smooth" });
     if (page < totalPages) {
       setPage(page + 1);
-      window.scrollTo({
-        top: windowHeight,
-        behavior: "smooth",
-      });
+      return scrollingToTop;
     }
   }
 
