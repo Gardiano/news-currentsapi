@@ -4,6 +4,6 @@ import 'dayjs/locale/en-gb'
 dayjs.extend(relativeTime);
 dayjs.locale('en-gb');
 
-export const Hours = (date: string) => {
+export const hours = (date: string) => {
   return dayjs().to(date);
 };
