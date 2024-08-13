@@ -4,8 +4,6 @@ interface AuthorProps {
 
 export const Author = (props: AuthorProps) => {
   return (
-    <>
-      {props.author && <i className="text-xs">{props.author ? props.author : null}</i>}
-    </>
+    <>{props.author && <i className="text-xs"> {props.author} </i>}</>
   )
 }
