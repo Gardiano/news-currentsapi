@@ -18,6 +18,6 @@ export const useNews = () => {
 
   return {
     fetchNews,
-    news
+    news,
   };
 }
