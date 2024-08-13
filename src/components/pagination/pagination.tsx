@@ -15,8 +15,8 @@ interface PaginationProps {
 export const Paginations = (props: PaginationProps) => {
 
   return (
-    <Pagination className="mb-4">
-      <PaginationContent>
+    <Pagination>
+      <PaginationContent className="hidden sm:flex">
         <PaginationItem>
           <Button
             className="w-fit h-fit flex bg-transparent 
@@ -27,8 +27,8 @@ export const Paginations = (props: PaginationProps) => {
           </Button>
         </PaginationItem>
         <PaginationItem className="w-fit h-fit flex flex-row justify-center items-center">
-          <Button className="w-fit h-fit flex bg-transparent 
-            hover:bg-transparent shadow-none text-slate-900">
+          <Button className="w-fit h-fit flex bg-transparent shadow-none text-slate-900 
+          hover:bg-transparent">
             {props?.currentPage}
           </Button>
           /
@@ -44,6 +44,18 @@ export const Paginations = (props: PaginationProps) => {
             onClick={props.nextPage}
             disabled={props?.currentPage === props.totalPages}>
             <ChevronRight />
+          </Button>
+        </PaginationItem>
+      </PaginationContent>
+
+      <PaginationContent className="w-[calc(100%-34px)] flex justify-center items-center sm:hidden">
+        <PaginationItem className="w-full flex justify-center">
+          <Button
+            className="w-full h-[48px] my-4 flex bg-white rounded-sm
+            text-sky-900 border border-sky-900 hover:bg-transparent"
+            onClick={props.nextPage}
+            disabled={props?.currentPage === props.totalPages}>
+            LOAD MORE
           </Button>
         </PaginationItem>
       </PaginationContent>
