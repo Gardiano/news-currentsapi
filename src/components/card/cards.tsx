@@ -2,39 +2,36 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { CardsProps } from "../models/card";
 import { NavigationLink } from "../navigation/navigationLink";
 import { Category } from "../category/category";
-import { Published } from "../published/published";
+import { PublicationTime } from "../published/publishedTime";
 import { Author } from "../author/author";
 import { ClassifyNews } from "../classify/classifyNews";
+import { PublishedAt } from "../published/publishedAt";
+import { Image } from "../image/image";
 
 export const Cards = (props: CardsProps) => {
-  const backgroundProps = {
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.0))`,
-    backgroundSize: `100% 100%`,
-  };
-
   return (
-    <Card className={`p-0 flex border-0 items-start justify-end
-        ${props.className}`}>
-      <NavigationLink url={props.url} target="_blank">
-        {props.image && <img className={`${props.imageSize} bg-no-repeat`} src={props.image} style={backgroundProps} />}
+    <Card className={`p-0 flex border-0 items-start justify-end rounded-none sm:rounded-sm ${props.className}`}>
+      <NavigationLink className={props.imageSize} url={props.url} target="_blank">
+        {props.image && <Image image={props.image} imageSize={props.imageSize} />}
       </NavigationLink>
-      <CardHeader className={`gap-2 h-full flex justify-start rounded-lg p-0 sm:gap-1
-        ${props.cardHeaderStyles}`}>
+      <CardHeader className={`h-full flex justify-start rounded-lg p-0
+      ${props.cardHeaderStyles}`}>
         <Category categories={props.category} />
-        <Author author={props.author} />
         <ClassifyNews type={props.published!} />
+        <Author author={props.author} />
+        <PublishedAt date={props.published} />
         <CardTitle
-          className={` text-slate-900 text-ellipsis pt-1 rounded-md sm:line-clamp-3 ${props.cardTitleStyles}`}>
+          className={`text-ellipsis pt-1 rounded-md sm:line-clamp-3 ${props.cardTitleStyles}`}>
           <NavigationLink className="font-times hover:text-sky-900 font-thin" url={props.url} target="_blank">
             {props.title}
           </NavigationLink>
         </CardTitle>
         <CardDescription
-          className={` font-prata text-start text-base text-slate-600 leading-none
-              ${props.cardDescriptionStyles} sm:line-clamp-4`}>
+          className={`font-times text-start text-base text-slate-700 leading-[1.2rem]
+            ${props.cardDescriptionStyles} sm:line-clamp-4`}>
           {props.description}
         </CardDescription>
-        <Published published={props.published} />
+        <PublicationTime time={props.published} />
       </CardHeader>
     </Card>
   )
