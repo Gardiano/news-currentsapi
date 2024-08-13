@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { Carousel, CarouselContent } from "../ui/carousel"
-import { NavigationLink } from "./navigationLink"
+import { Carousel, CarouselContent } from "../ui/carousel";
+import { NavigationLink } from "./navigationLink";
 
 export const NavigationMenu = () => {
   const navigate = useNavigate();
@@ -16,13 +16,14 @@ export const NavigationMenu = () => {
   ];
 
   return (
-    <nav className="w-full max-w-[1080px] mx-auto h-fit flex border-b border-b-slate-900 mb-4">
-      <Carousel className="w-full h-fit mx-auto">
+    <nav className="w-[calc(100%-38px)] max-w-[1080px] mx-auto h-fit flex border-b border-b-slate-900 mb-4">
+      <Carousel className="w-full h-fit mx-auto overflow-x-auto"
+        style={{ scrollBehavior:'smooth'}}>
         <CarouselContent className="pl-2">
           {themes.map((theme, index) => (
             <NavigationLink
               key={index}
-              className="w-fit h-fit text-slate-600 px-2 py-1 mx-1"
+              className="flex-shrink-0 h-fit font-times text-slate-600 px-2 py-1 mx-1"
               onClick={() => handleNavigation(theme)}>
               {theme}
             </NavigationLink>
@@ -30,5 +31,5 @@ export const NavigationMenu = () => {
         </CarouselContent>
       </Carousel>
     </nav>
-  )
-}
+  );
+};
