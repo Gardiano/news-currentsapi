@@ -18,7 +18,7 @@ export const Home = () => {
 
   return (
     <>
-      <Grid data={news} theme={'latest-news'} paginationData={paginationNews} />
+      <Grid data={news} theme={'latest news'} paginationData={paginationNews} />
       <Paginations nextPage={handleNextPage} previousPage={handlePrevPage} currentPage={page} totalPages={totalPages} />
     </>
   )
