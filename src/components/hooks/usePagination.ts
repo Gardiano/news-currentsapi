@@ -9,7 +9,7 @@ export const usePagination = () => {
   const [totalNews] = useState<number>(200);
 
   useEffect(() => {
-    const paginatedItems = document.getElementById('paginated-items')?.offsetTop;
+    const paginatedItems = document.getElementById('top-of-pagination')?.offsetTop;
     const scrollingToTop = window.scrollTo({ top: paginatedItems, behavior: "smooth" });
     if (paginatedItems === 1) {
       return scrollingToTop;
