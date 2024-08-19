@@ -11,7 +11,7 @@ export const usePagination = () => {
   useEffect(() => {
     const paginatedItems = document.getElementById('paginated-items')?.offsetTop;
     const scrollingToTop = window.scrollTo({ top: paginatedItems, behavior: "smooth" });
-    if (paginatedItems !== undefined) {
+    if (paginatedItems === 1) {
       return scrollingToTop;
     };
   }, [page]);
