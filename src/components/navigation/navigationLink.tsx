@@ -12,7 +12,7 @@ export const NavigationLink = (props: NavigationLinkProps) => {
     <Link 
       {...props}
       to={props.url!}
-      className={`text-zinc-900 font-mono ${props.className}`}>
+      className={`${props.className}`}>
       {props.children}
     </Link>
   );
