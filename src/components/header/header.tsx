@@ -1,11 +1,11 @@
 import { NavigationLink } from "../navigation/navigationLink";
 
 export const Header = () => {
-  
-  const links = ['world', 'politics', 'sports', 'entertainment'];
 
+  const links = ['world', 'politics', 'sports', 'entertainment'];
+  
   return (
-    <header className="w-full h-full py-4 flex flex-col items-center justify-center bg-zinc-900">
+    <header className="w-full h-[70px] fixed top-0 py-4 flex flex-col items-center justify-center bg-zinc-900 z-50">
       <nav className="w-[calc(100%-28px)] max-w-[1110px] h-full flex flex-row items-center">
         <div className="w-full max-w-1/2 h-full flex items-center">
           <NavigationLink
