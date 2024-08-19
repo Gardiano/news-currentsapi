@@ -1,12 +1,13 @@
-import { Grid } from "../grid/grid"
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useNews } from "../hooks/useNews";
-import { usePagination } from "../hooks/usePagination";
-import { Paginations } from "../pagination/pagination";
+import { useEffect } from 'react';
+import { Grid } from '../grid/grid';
+import { Paginations } from '../pagination/pagination';
+import { useParams } from 'react-router-dom';
+import { usePagination } from '../hooks/usePagination';
+import { useNews } from '../hooks/useNews';
+import { Loader } from '../loader/loader';
 
 export const Home = () => {
-  const { news, fetchNews } = useNews();
+  const { news, fetchNews, status } = useNews();
   const { paginationNews, totalPages, page, fetchNewsForPagination,
     handlePrevPage, handleNextPage } = usePagination();
   const params = useParams();
@@ -14,12 +15,14 @@ export const Home = () => {
   useEffect(() => {
     fetchNews(1, params.id!);
     fetchNewsForPagination(page, params.id!);
-  }, [page]);
+  }, [params.id, page, status]);
+
+  if (status !== 200) return <Loader />
 
   return (
     <>
-      <Grid data={news} theme={'latest news'} paginationData={paginationNews} />
+      <Grid data={news} theme={params.id! || 'Latest News'} paginationData={paginationNews} />
       <Paginations nextPage={handleNextPage} previousPage={handlePrevPage} currentPage={page} totalPages={totalPages} />
     </>
-  )
-}
+  );
+};
