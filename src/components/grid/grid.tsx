@@ -30,7 +30,7 @@ export const Grid = (props: GridProps) => {
               imageSize="w-full h-auto sm:h-[437px]
               sm:rounded-bl-none sm:rounded-br-none sm:rounded-sm"
               cardHeaderStyles='w-full h-full p-4 text-md sm:text-lg lg:text-xl'
-              className='w-full flex-col flex justify-center'
+              className='w-full h-full flex-col flex justify-center'
             />
           ))}
         </div>
@@ -45,7 +45,7 @@ export const Grid = (props: GridProps) => {
               title={data.title}
               category={data.category}
               published={data.published}
-              imageSize="w-full h-full max-h-[170px] 
+              imageSize="w-full h-auto sm:h-[170px]
               sm:rounded-bl-none sm:rounded-br-none sm:rounded-sm"
               cardHeaderStyles='w-full h-auto p-4 text-md sm:text-lg lg:text-xl'
               className='w-full h-auto flex-col justify-start'
