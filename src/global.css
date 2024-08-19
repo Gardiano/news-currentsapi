@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.carousel-shadow-left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px; 
+  height: 100%;
+  background-image: linear-gradient(to left, rgb(244, 244, 244), rgba(244, 244, 244, 0));
+  pointer-events: none; 
+  z-index: 1;
+}
+
 @layer base {
   body {
     box-sizing: border-box!important;
