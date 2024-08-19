@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { usePagination } from '../hooks/usePagination';
 import { useNews } from '../hooks/useNews';
 import { Loader } from '../loader/loader';
+import { NavigationMenu } from '../navigation/navigationMenu';
 
 export const Home = () => {
   const { news, fetchNews, status } = useNews();
@@ -21,6 +22,7 @@ export const Home = () => {
 
   return (
     <>
+      <NavigationMenu className='w-full fixed top-[70px] z-50 sm:hidden' />
       <Grid data={news} theme={params.id! || 'Latest News'} paginationData={paginationNews} />
       <Paginations nextPage={handleNextPage} previousPage={handlePrevPage} currentPage={page} totalPages={totalPages} />
     </>
