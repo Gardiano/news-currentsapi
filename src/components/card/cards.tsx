@@ -1,4 +1,5 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNews } from "../hooks/useNews";
 import { CardsProps } from "../models/card";
 import { NavigationLink } from "../navigation/navigationLink";
 import { Category } from "../category/category";
@@ -6,9 +7,14 @@ import { PublicationTime } from "../published/publishedTime";
 import { Author } from "../author/author";
 import { ClassifyNews } from "../classify/classifyNews";
 import { PublishedAt } from "../published/publishedAt";
+import { Skeleton } from "../ui/skeleton";
 import { Image } from "../image/image";
 
 export const Cards = (props: CardsProps) => {
+  const { loading } = useNews();
+
+  if (loading) return <Skeleton className='w-full h-[180px] bg-slate-400 rounded-none first:h-full' />
+
   return (
     <Card className={`p-0 flex border-0 items-start justify-end rounded-none sm:rounded-sm ${props.className}`}>
       <NavigationLink className={props.imageSize} url={props.url} target="_blank">
