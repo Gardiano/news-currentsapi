@@ -12,10 +12,10 @@ interface GridProps {
 
 export const Grid = (props: GridProps) => {
   return (
-    <main>
+    <main className="flex relative w-full h-full flex-col mt-28 sm:mt-0">
       <Theme theme={props.theme} />
-      <NavigationMenu />
-      <section className="w-full max-w-[1144px] mx-auto gap-4 
+      <NavigationMenu className='hidden sm:flex' />
+      <section className="w-full h-auto max-w-[1144px] mx-auto gap-4 
         grid grid-cols-1 lg:grid-cols-2 sm:grid-rows-1 sm:p-0">
         <div className='px-0 w-full h-full col-span-1'>
           {props.data.slice(0, 1).map(data => (
@@ -75,10 +75,10 @@ export const Grid = (props: GridProps) => {
           ))}
         </div>
 
-        <Separator className="w-full border-2 border-slate-500 col-span-full " />
+        <Separator className="w-full border-2 border-slate-500 col-span-full" id="top-of-pagination" />
 
         <div className='w-full h-full mx-auto gap-4 
-        grid grid-cols-1 col-span-full' id="paginated-items">
+        grid grid-cols-1 col-span-full'>
           {props.paginationData?.map(data => (
             <Cards
               key={data.id}
