@@ -15,5 +15,6 @@ export interface News {
     page?: number
 }
 export interface NewsProps<T> {
+  status: number
   data: T
 }
