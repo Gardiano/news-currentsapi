@@ -1,3 +1,4 @@
+import { Separator } from "@radix-ui/react-separator";
 import { Cards } from "../card/cards"
 import { News } from "../models/news"
 import { NavigationMenu } from "../navigation/navigationMenu"
@@ -53,6 +54,8 @@ export const Grid = (props: GridProps) => {
           ))}
         </div>
 
+        <Separator className="w-full border-2 border-slate-500 col-span-full" />
+
         <div className='px-6 w-full h-full gap-4 grid grid-cols-2 col-span-full
         md:grid-cols-4 xl:grid-cols-4 sm:px-0'>
           {props.data.slice(5, 13).map(data => (
@@ -71,6 +74,8 @@ export const Grid = (props: GridProps) => {
             />
           ))}
         </div>
+
+        <Separator className="w-full border-2 border-slate-500 col-span-full " />
 
         <div className='w-full h-full mx-auto gap-4 
         grid grid-cols-1 col-span-full' id="paginated-items">
