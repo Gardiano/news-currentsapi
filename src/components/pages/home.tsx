@@ -22,7 +22,7 @@ export const Home = () => {
 
   return (
     <>
-      <NavigationMenu className='w-full fixed top-[70px] z-50 sm:hidden' />
+      <NavigationMenu className='w-full fixed top-[58px] text-xs z-50 sm:text-sm lg:hidden' />
       <Grid data={news} theme={params.id! || 'Latest News'} paginationData={paginationNews} />
       <Paginations nextPage={handleNextPage} previousPage={handlePrevPage} currentPage={page} totalPages={totalPages} />
     </>
