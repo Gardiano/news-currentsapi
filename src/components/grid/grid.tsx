@@ -12,11 +12,12 @@ interface GridProps {
 
 export const Grid = (props: GridProps) => {
   return (
-    <main className="flex relative w-full h-full flex-col mt-28 sm:mt-0">
+    <main className="flex relative w-full h-full flex-col mt-[6.7rem] lg:mt-0">
       <Theme theme={props.theme} />
-      <NavigationMenu className='hidden sm:flex' />
+      <NavigationMenu className='hidden lg:flex' />
       <section className="w-full h-auto max-w-[1144px] mx-auto gap-4 
-        grid grid-cols-1 lg:grid-cols-2 sm:grid-rows-1 sm:p-0">
+        grid grid-cols-1 lg:grid-cols-2 
+        sm:max-w-[780px] sm:grid-rows-1 sm:p-0 lg:max-w-[1144px]">
         <div className='px-0 w-full h-full col-span-1'>
           {props.data.slice(0, 1).map(data => (
             <Cards
