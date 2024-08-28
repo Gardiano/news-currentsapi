@@ -1,12 +1,13 @@
 import { Menu } from "lucide-react";
 import { Button } from "../ui/button";
+
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
-import { Select, SelectContent, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Select, SelectContent, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { NavigationLink } from "../navigation/navigationLink";
 
 export const SheetMenu = () => {
   const SHEET_SIDES = ["left"] as const;
-
+  
   const themes: string[] = [
     "latest news", "world", "politics", "regional", "business", "finance", "sports", "technology",
     "lifestyle", "science", "entertainment", "opinion", "food",
