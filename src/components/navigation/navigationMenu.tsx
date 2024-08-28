@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { themes } from "../../constants/themes"
 import { Carousel, CarouselContent } from "../ui/carousel";
 import { NavigationLink } from "./navigationLink";
 import { useParams } from "react-router-dom";
