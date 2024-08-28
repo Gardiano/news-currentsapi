@@ -1,4 +1,4 @@
-import { getNews } from "@/services/api";
+import { getNewsByCategory } from "@/services/api";
 import { News } from "../models/news";
 import { useEffect, useState } from "react";
 
@@ -30,7 +30,7 @@ export const usePagination = () => {
     const category = categorie!;
     const itemsPerPage = 20;
     try {
-      const response = await getNews(category, page, itemsPerPage);
+      const response = await getNewsByCategory(category, page, itemsPerPage);
       if (page) {
         setPaginationNews(response.data.news.slice(9));
         setTotalPages(Math.ceil(totalNews / itemsPerPage));
