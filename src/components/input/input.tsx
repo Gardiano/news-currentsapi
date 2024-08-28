@@ -6,12 +6,12 @@ interface InputProps {
   type: HTMLInputTypeAttribute
   value: string
   className: string
-  onChange: (e: any) => void
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Inputs = (props: InputProps) => {
   return (
-      <Input
+    <Input
       type={props.type}
       value={props.value}
       className={props.className}
