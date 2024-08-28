@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { themes } from "../../constants/themes"
 import { Carousel, CarouselContent } from "../ui/carousel";
 import { NavigationLink } from "./navigationLink";
 import { useParams } from "react-router-dom";
@@ -19,12 +20,6 @@ export const NavigationMenu = (props: NavigationMenuProps) => {
     navigate(`/news/${theme}`);
     return scrollingToTop
   };
-
-  const themes: string[] = [
-    "latest news", "world", "politics", "regional", "business", "finance", "sports", "technology",
-    "lifestyle", "science", "entertainment", "opinion", "food",
-    "fashion", "travel", "economy", "environment", "art", "music", "movie"
-  ];
 
   useEffect(() => {
     focus();
