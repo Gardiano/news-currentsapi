@@ -1,6 +1,6 @@
 import { ReactNode, useState, createContext } from "react";
 import { News } from "../models/news";
-import { getNews } from "@/services/api";
+import { getNewsByCategory } from "@/services/api";
 
 type NewsContextTypes = {
   news: News[];
@@ -16,7 +16,7 @@ type NewsContextProviderProps = {
 
 export const NewsContext = createContext({} as NewsContextTypes);
 
-export function NewsContextProvider(props: NewsContextProviderProps) {
+export const NewsContextProvider = (props: NewsContextProviderProps) => {
   const [news, setNews] = useState<News[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [status, setStatus] = useState<number>(0);
@@ -25,7 +25,7 @@ export function NewsContextProvider(props: NewsContextProviderProps) {
     setLoading(true);
     const itemsPerPage = 9;
     try {
-      const response = await getNews(category, page, itemsPerPage);
+      const response = await getNewsByCategory(category, page, itemsPerPage);
       if (response.status === 200) {
         setStatus(200);
         return setNews(response.data.news);
@@ -33,7 +33,7 @@ export function NewsContextProvider(props: NewsContextProviderProps) {
       setStatus(0);
       setLoading(false);
     } catch (e) {
-      console.error('Error fetching news', e);
+      throw new Error('Error fetching news');
     } finally {
       setLoading(false);
     }
