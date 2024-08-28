@@ -10,3 +10,11 @@ export const getNewsByCategory = async (category: string, page_number: number, p
       .catch(error => reject(error));
   });
 };
+
+export const getNewsByKeyWords = async (keywords: string, page_number: number, page_size: number): Promise<NewsProps<News>> => {
+  return new Promise((resolve, reject) => {
+    api.get(`/search?domain=theguardian.com&type=1&keywords=${keywords}&page_number=${page_number}&page_size=${page_size}&language=en&apiKey=${key}`)
+      .then(response => resolve(response))
+      .catch(error => reject(error));
+  });
+};
