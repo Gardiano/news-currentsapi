@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 
 interface NavigationMenuProps {
   className?: string
-  value: string
 }
 
 export const NavigationMenu = (props: NavigationMenuProps) => {
