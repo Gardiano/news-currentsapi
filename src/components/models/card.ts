@@ -4,10 +4,12 @@ export interface CardsProps {
   category?: string[]
   author?: string
   published?: string
+  publicationTime?: string
   description?: string
   className?: string
   image?: string
   imageSize?: string
+  classifyNews?: string
   cardHeaderStyles?: string
   cardTitleStyles?: string
   cardDescriptionStyles?: string

@@ -23,21 +23,22 @@ export const Cards = (props: CardsProps) => {
       <CardHeader className={`h-full flex justify-start rounded-lg p-0
       ${props.cardHeaderStyles}`}>
         <Category categories={props.category} />
-        <ClassifyNews type={props.published!} />
-        <Author author={props.author} />
+        <ClassifyNews type={props.classifyNews!} />
         <PublishedAt date={props.published} />
+        <Author author={props.author} />
         <CardTitle
-          className={`text-ellipsis pt-1 rounded-md sm:line-clamp-3 ${props.cardTitleStyles}`}>
-          <NavigationLink className="font-times hover:text-sky-900 font-thin" url={props.url} target="_blank">
+          className={`text-ellipsis pt-0 rounded-md sm:line-clamp-3 ${props.cardTitleStyles}`}>
+          <NavigationLink className="font-times font-thin text-md 
+          sm:leading-5 sm:text-lg hover:text-sky-900" url={props.url} target="_blank">
             {props.title}
           </NavigationLink>
         </CardTitle>
         <CardDescription
-          className={`font-times text-start text-base text-slate-700 leading-[1.2rem]
+          className={`font-times text-start text-base text-slate-700 leading-[1.2rem] space-y-0
             ${props.cardDescriptionStyles} sm:line-clamp-4`}>
           {props.description}
         </CardDescription>
-        <PublicationTime time={props.published} />
+          <PublicationTime time={props.publicationTime} />
       </CardHeader>
     </Card>
   )

@@ -9,7 +9,7 @@ export const Search = () => {
 
   return (
     <div className="w-full max-w-[1144px] h-full flex flex-row justify-center mb-4">
-      <div className="w-full h-fit flex flex-row justify-center items-center">
+      <div className="w-[calc(100%-40px)] h-fit flex flex-row justify-center items-center">
         <Inputs
           className="w-full h-[36px] flex bg-zinc-300 border-0 border-b border-zinc-400
           rounded-none text-zinc-900 shadow-none sm:h-[42px]"
