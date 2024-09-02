@@ -16,7 +16,7 @@ export const Cards = (props: CardsProps) => {
   if (loading) return <Skeleton className='w-full h-[180px] bg-slate-400 rounded-none first:h-full' />
 
   return (
-    <Card className={`p-0 flex border-0 items-start justify-end rounded-none sm:rounded-sm ${props.className}`}>
+    <Card className={`p-0 border-none rounded-none sm:rounded-sm ${props.className}`}>
       <NavigationLink className={props.imageSize} url={props.url} target="_blank">
         {props.image && <Image image={props.image} imageSize={props.imageSize} />}
       </NavigationLink>
