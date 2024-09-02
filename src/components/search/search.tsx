@@ -8,7 +8,7 @@ export const Search = () => {
   const { value, handleChange } = useSearch();
 
   return (
-    <div className="w-full max-w-[1144px] h-full flex flex-row justify-center mb-4">
+    <div className="w-full max-w-[1144px] h-full hidden flex-row justify-center mb-4 lg:flex">
       <div className="w-[calc(100%-40px)] h-fit flex flex-row justify-center items-center">
         <Inputs
           className="w-full h-[36px] flex bg-zinc-300 border-0 border-b border-zinc-400
