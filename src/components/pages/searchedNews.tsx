@@ -6,6 +6,8 @@ import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
 import { Loader } from "../loader/loader";
 import { Search } from "../search/search";
+import { Quantity } from "../quantity/quantity";
+import { Message } from "../common/message";
 
 export const SearchedNews = () => {
   const params = useParams();
@@ -15,7 +17,7 @@ export const SearchedNews = () => {
 
   useEffect(() => {
     getSearched();
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }, [params.id!, status]);
 
   const getSearched = async () => {
@@ -39,12 +41,10 @@ export const SearchedNews = () => {
   if (status !== 200) return <Loader />
 
   return (
-
-    <main className="w-full max-w-[1144px] h-full flex-col justify-center mx-auto mt-24">
-      {searched.length == 0 && <h1 className="text-sky-900"> Your search did not find any matching news. </h1>}
-      {searched.length > 0 && <span className="w-fit flex flex-row justify-start bg-sky-100 text-xs text-sky-900 my-2 p-2 h-auto gap-1">
-        {searched.length} news results for: <u> {params.id!} </u> </span>}
-        <Search />
+    <main className="w-full max-w-[1144px] h-full flex-col justify-center mx-auto mt-[3.7rem] lg:mt-24 ">
+      {!searched.length && <Message message="Your search did not find any matching news, please try again." />}
+      <Search />
+      {searched.length > 0 && <Quantity id={params.id!} quantity={searched.length} />}
       <div className='w-full h-full mx-auto gap-4 grid grid-cols-1'>
         {searched.map(data => (
           <div>
