@@ -67,7 +67,6 @@ export const Grid = (props: GridProps) => {
               title={data.title}
               classifyNews={data.published}
               published={data.published}
-              
               cardTitleStyles="line-clamp-6"
               cardHeaderStyles='w-full h-auto p-3'
               className='w-full h-full flex-col flex justify-start'
