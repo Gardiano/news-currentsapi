@@ -35,6 +35,7 @@ export const SearchContextProvider = (props: SearchContextProviderProps) => {
 
   const handleOpen = () => {
     setOpen(prevState => !prevState);
+    setValue('');
   }
 
   const fetchSearchedNews = async (keywords: string, page: number, page_size: number) => {
@@ -43,14 +44,17 @@ export const SearchContextProvider = (props: SearchContextProviderProps) => {
       const response = await getNewsByKeyWords(keywords, page, page_size);
       if (response.status === 200) {
         setStatus(200);
-        return setSearched(response.data.news);
+        setSearched(response.data.news || []);
+        setValue('');
+        setLoading(false);
+        return;
       }
       setStatus(0);
+      setValue('');
       setLoading(false);
+      return;
     } catch (e) {
       throw new Error('Error fetching searched news');
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -59,10 +63,10 @@ export const SearchContextProvider = (props: SearchContextProviderProps) => {
     try {
       const response = await getNewsByKeyWords(keywords, page, page_size);
       setSearched(prevState => [...prevState, ...response.data.news]);
+      setLoading(false);
+      return;
     } catch (e) {
       throw new Error('Error fetching searched news');
-    } finally {
-      setLoading(false);
     }
   };
 
