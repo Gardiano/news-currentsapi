@@ -28,14 +28,15 @@ export const NewsContextProvider = (props: NewsContextProviderProps) => {
       const response = await getNewsByCategory(category, page, itemsPerPage);
       if (response.status === 200) {
         setStatus(200);
-        return setNews(response.data.news);
+        setNews(response.data.news);
+        setLoading(false);
+        return;
       }
       setStatus(0);
       setLoading(false);
+      return;
     } catch (e) {
       throw new Error('Error fetching news');
-    } finally {
-      setLoading(false);
     }
   };
 
