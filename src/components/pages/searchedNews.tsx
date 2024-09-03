@@ -71,12 +71,12 @@ export const SearchedNews = () => {
       </div>
 
       {searched.length > 1 &&
-        <div className="w-full h-full flex justify-center">
+        <div className="w-full h-full flex justify-center px-4 xl:px-0">
           <Button
             disabled={searched.length < 30}
             onClick={getMoreSearched}
-            className="w-full h-[48px] rounded-sm my-4 mx-auto
-         bg-slate-100 text-sky-700 border border-sky-900 hover:bg-slate-100">
+            className="w-full h-[48px] my-4 flex bg-white rounded-sm
+            text-sky-900 border border-sky-900 hover:bg-transparent">
             LOAD MORE
           </Button>
         </div>
