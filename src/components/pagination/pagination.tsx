@@ -48,7 +48,8 @@ export const Paginations = (props: PaginationProps) => {
         </PaginationItem>
       </PaginationContent>
 
-      <PaginationContent className="w-[calc(100%-34px)] flex justify-center items-center sm:hidden">
+      <PaginationContent className="w-[calc(100%-34px)] max-w-[700px] 
+      flex justify-center items-center sm:hidden">
         <PaginationItem className="w-full flex justify-center">
           <Button
             className="w-full h-[48px] my-4 flex bg-white rounded-sm
