@@ -6,6 +6,7 @@ import { usePagination } from '../hooks/usePagination';
 import { useNews } from '../hooks/useNews';
 import { Loader } from '../loader/loader';
 import { NavigationMenu } from '../navigation/navigationMenu';
+import { BackToTop } from '../buttons/backToTop';
 
 export const Home = () => {
   const { news, fetchNews, status } = useNews();
@@ -25,6 +26,7 @@ export const Home = () => {
       <NavigationMenu className='w-full fixed top-[58px] text-xs z-50 sm:text-sm lg:hidden' />
       <Grid data={news} theme={params.id! || 'Latest News'} paginationData={paginationNews} />
       <Paginations nextPage={handleNextPage} previousPage={handlePrevPage} currentPage={page} totalPages={totalPages} />
+      <BackToTop />
     </>
   );
 };
