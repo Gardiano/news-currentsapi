@@ -16,7 +16,7 @@ export const Paginations = (props: PaginationProps) => {
 
   return (
     <Pagination>
-      <PaginationContent className="hidden sm:flex">
+      <PaginationContent className="py-5 hidden sm:flex">
         <PaginationItem>
           <Button
             className="w-fit h-fit flex bg-transparent 
