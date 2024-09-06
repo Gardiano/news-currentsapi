@@ -9,7 +9,7 @@ export const Footer = () => {
       <div className="w-full max-w-[1144px] h-full mx-auto py-4 flex flex-col p-4">
         <h1 className='font-times'>NEWS</h1>
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-4 
-          text-xs text-slate-200 font-thin py-4">
+          text-xs text-slate-200 font-thin py-4 mb-2">
           <div className="flex flex-col items-start justify-start gap-4 lg:flex-row">
             <div className="w-full flex flex-wrap items-center">
               <Separator orientation='horizontal' className='border-1 bg-slate-400' />
@@ -55,7 +55,7 @@ export const Footer = () => {
           </div>
         </div>
         <Separator orientation='horizontal' className='border-1 bg-slate-400' />
-        <span className='w-full h-fit flex justify-center  text-xs gap-1 py-4 font-thin'> 
+        <span className='w-full h-fit flex justify-center text-xs gap-1 py-4 font-thin'> 
           © News <b> {currentYear} </b> 
         </span>
         <Separator orientation='horizontal' className='border-1 bg-slate-400' />
