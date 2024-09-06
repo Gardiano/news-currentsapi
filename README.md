@@ -19,7 +19,7 @@
 
 
 <br /><br />
-<a href="" target="_blank">Link Para Visualização Do Projeto</a>
+<a href="https://news-currentsapi.vercel.app/" target="_blank">Link Para Visualização Do Projeto</a>
 <br /><br /><br />
 
 <img src="src/assets/mobile-gif.gif" alt="BookFinder" width="250" height="400"> 
