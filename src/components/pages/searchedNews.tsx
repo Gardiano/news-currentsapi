@@ -7,9 +7,9 @@ import { Skeleton } from "../ui/skeleton";
 import { Loader } from "../loader/loader";
 import { Search } from "../search/search";
 import { Quantity } from "../quantity/quantity";
-import { Message } from "../common/message";
 import { NavigationLink } from "../navigation/navigationLink";
 import { BackToTop } from "../buttons/backToTop";
+import { Suggestions } from "../suggestions/suggestions";
 
 export const SearchedNews = () => {
   const params = useParams();
@@ -44,12 +44,13 @@ export const SearchedNews = () => {
 
   return (
     <main id="toTop" className="w-full h-full flex-col justify-center mx-auto mt-[3.7rem] lg:mt-24">
-      {!searched.length && <Message message="Your search did not find any matching news, please try again." />}
-      <Search />
-      {searched.length > 0 && <Quantity id={params.id!} quantity={searched.length} />}
-      <div className="w-full max-w-[1144px] h-fit flex flex-row items-center text-xs gap-1 py-2 mx-auto justify-end text-sky-900">
-        <NavigationLink url={`/`} className=""> /home </NavigationLink>
+      <div className="hidden w-full max-w-[1144px] h-fit flex-row items-center 
+      text-xs gap-1 p-2 mx-auto justify-end text-sky-900 sm:flex">
+        <NavigationLink url={`/`}> /home </NavigationLink>
       </div>
+      <Search />
+      {!searched.length && <Suggestions value={params.id!} />}
+      {searched.length > 0 && <Quantity id={params.id!} quantity={searched.length} />}
       <div className='w-full max-w-[1144px] h-full mx-auto gap-4 grid grid-cols-1'>
         {searched.map(data => (
           <div>
